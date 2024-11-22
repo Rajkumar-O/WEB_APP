@@ -2,9 +2,9 @@ import streamlit as st
 st.title("2205A21028-PS4")
 
 def STAR_DELTA(R1, R2, R3):
-    R12=((R1*1000)*(R2*1000)+(R2*1000)*(R3*1000)+(R3*1000)*(R1*1000))/(R3*1000)
-    R23=((R1*1000)*(R2*1000)+(R2*1000)*(R3*1000)+(R3*1000)*(R1*1000))/(R3*1000)
-    R31=((R1*1000)*(R2*1000)+(R2*1000)*(R3*1000)+(R3*1000)*(R1*1000))/(R3*1000)
+    R12=(R1*R2+R2*R3+R3*R1)/(R3)
+    R23=(R1*R2+R2*R3+R3*R1)/(R3)
+    R31=(R1*R2+R2*R3+R3*R1)/(R3)
     return R12,R23,R31
 
   
@@ -16,9 +16,9 @@ col1, col2 = st.columns(2)
 
     # Input values in the first column
 with col1:
-    R1 = st.number_input("R1:KiloOhms", value=100)
-    R2 = st.number_input("R2:KiloOhms", value=100)
-    R3 = st.number_input("R3:KiloOhms", value=100)
+    R1 = st.number_input("R1:Ohms", value=100)
+    R2 = st.number_input("R2:Ohms", value=100)
+    R3 = st.number_input("R3:STREAMLIT RUN Ohms", value=100)
     compute = st.button("Compute")
 
     # Output values in the second column
